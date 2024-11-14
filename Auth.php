@@ -27,7 +27,7 @@ if (isset($_GET['logout'])) {
 
 // Handle registration
 if (isset($_POST['register'])) {
-    $email = $conn->real_escape_string($_POST['InputSignupEmail']);
+    $email = $conn->real_escape_strasding($_POST['InputSignupEmail']);
     $password = password_hash($conn->real_escape_string($_POST['InputSignupPassword']), PASSWORD_DEFAULT);
     $conn->query("INSERT INTO users (email, password) VALUES ('$email', '$password')");
 }
